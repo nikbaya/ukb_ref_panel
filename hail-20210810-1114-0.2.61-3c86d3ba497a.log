@@ -1,0 +1,791 @@
+2021-08-10 11:14:47 Hail: INFO: Running Hail version 0.2.61-3c86d3ba497a
+2021-08-10 11:14:47 SparkContext: WARN: Using an existing SparkContext; some configuration may not take effect.
+2021-08-10 11:14:47 root: INFO: RegionPool: initialized for thread 25: Thread-5
+2021-08-10 11:14:48 MemoryStore: INFO: Block broadcast_0 stored as values in memory (estimated size 1699.1 KB, free 5.2 GB)
+2021-08-10 11:14:48 MemoryStore: INFO: Block broadcast_0_piece0 stored as bytes in memory (estimated size 123.7 KB, free 5.2 GB)
+2021-08-10 11:14:48 BlockManagerInfo: INFO: Added broadcast_0_piece0 in memory on compe059.hpc.in.bmrc.ox.ac.uk:35081 (size: 123.7 KB, free: 5.2 GB)
+2021-08-10 11:14:48 SparkContext: INFO: Created broadcast 0 from broadcast at SparkBackend.scala:250
+2021-08-10 11:14:48 root: INFO: timing SparkBackend.parse_matrix_ir total 705.476ms self 705.476ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.parse_value_ir total 2.846ms self 2.846ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: starting execution of query hail_query_1 of initial size 2
+2021-08-10 11:14:56 root: INFO: optimize optimize: relationalLowerer, initial IR: before: IR size 2: 
+(MatrixCount
+  (MatrixRead None False False
+    "{\"path\":\"/well/lindgren/UKBIOBANK/nbaya/wes_200k/ukb_wes_qc/data/filtered/ukb_wes_200k_filtered_chr21.mt/\",\"name\":\"MatrixNativeReader\"}"))
+2021-08-10 11:14:56 root: INFO: optimize optimize: relationalLowerer, initial IR: after: IR size 1:
+(Literal Tuple[Int64,Int32] <literal value>)
+2021-08-10 11:14:56 root: INFO: optimize optimize: relationalLowerer, after LowerMatrixToTable: before: IR size 1: 
+(Literal Tuple[Int64,Int32] <literal value>)
+2021-08-10 11:14:56 root: INFO: optimize optimize: relationalLowerer, after LowerMatrixToTable: after: IR size 1:
+(Literal Tuple[Int64,Int32] <literal value>)
+2021-08-10 11:14:56 root: INFO: optimize optimize: relationalLowerer, after InterpretNonCompilable: before: IR size 1: 
+(Literal Tuple[Int64,Int32] <literal value>)
+2021-08-10 11:14:56 root: INFO: optimize optimize: relationalLowerer, after InterpretNonCompilable: after: IR size 1:
+(Literal Tuple[Int64,Int32] <literal value>)
+2021-08-10 11:14:56 root: INFO: optimize optimize: compileLowerer, initial IR: before: IR size 2: 
+(MakeTuple (0)
+  (Literal Tuple[Int64,Int32] <literal value>))
+2021-08-10 11:14:56 root: INFO: optimize optimize: compileLowerer, initial IR: after: IR size 1:
+(Literal Tuple[Tuple[Int64,Int32]]
+  <literal value>)
+2021-08-10 11:14:56 root: INFO: optimize optimize: compileLowerer, after InlineApplyIR: before: IR size 1: 
+(Literal Tuple[Tuple[Int64,Int32]]
+  <literal value>)
+2021-08-10 11:14:56 root: INFO: optimize optimize: compileLowerer, after InlineApplyIR: after: IR size 1:
+(Literal Tuple[Tuple[Int64,Int32]]
+  <literal value>)
+2021-08-10 11:14:56 root: INFO: optimize optimize: compileLowerer, after LowerArrayAggsToRunAggs: before: IR size 1: 
+(Literal Tuple[Tuple[Int64,Int32]]
+  <literal value>)
+2021-08-10 11:14:56 root: INFO: optimize optimize: compileLowerer, after LowerArrayAggsToRunAggs: after: IR size 1:
+(Literal Tuple[Tuple[Int64,Int32]]
+  <literal value>)
+2021-08-10 11:14:56 root: INFO: encoder cache miss (0 hits, 1 misses, 0.000)
+2021-08-10 11:14:56 root: INFO: instruction count: 3: __C10etypeEncode.<init>
+2021-08-10 11:14:56 root: INFO: instruction count: 5: __C10etypeEncode.apply
+2021-08-10 11:14:56 root: INFO: instruction count: 9: __C10etypeEncode.__m11ENCODE_r_tuple_of_r_tuple_of_r_tuple_of_r_int64ANDr_int32ENDENDEND_TO_r_struct_of_r_struct_of_r_struct_of_r_int64ANDr_int32ENDENDEND
+2021-08-10 11:14:56 root: INFO: instruction count: 9: __C10etypeEncode.__m12ENCODE_r_tuple_of_r_tuple_of_r_int64ANDr_int32ENDEND_TO_r_struct_of_r_struct_of_r_int64ANDr_int32ENDEND
+2021-08-10 11:14:56 root: INFO: instruction count: 23: __C10etypeEncode.__m13ENCODE_r_tuple_of_r_int64ANDr_int32END_TO_r_struct_of_r_int64ANDr_int32END
+2021-08-10 11:14:56 root: INFO: instruction count: 4: __C10etypeEncode.__m14ENCODE_r_int64_TO_r_int64
+2021-08-10 11:14:56 root: INFO: instruction count: 4: __C10etypeEncode.__m15ENCODE_r_int32_TO_r_int32
+2021-08-10 11:14:56 MemoryStore: INFO: Block broadcast_1 stored as values in memory (estimated size 88.0 B, free 5.2 GB)
+2021-08-10 11:14:56 MemoryStore: INFO: Block broadcast_1_piece0 stored as bytes in memory (estimated size 71.0 B, free 5.2 GB)
+2021-08-10 11:14:56 BlockManagerInfo: INFO: Added broadcast_1_piece0 in memory on compe059.hpc.in.bmrc.ox.ac.uk:35081 (size: 71.0 B, free: 5.2 GB)
+2021-08-10 11:14:56 SparkContext: INFO: Created broadcast 1 from broadcast at SparkBackend.scala:250
+2021-08-10 11:14:56 root: INFO: instruction count: 3: __C1Compiled.<init>
+2021-08-10 11:14:56 root: INFO: instruction count: 3: __C1Compiled.apply
+2021-08-10 11:14:56 root: INFO: instruction count: 9: __C1Compiled.setPartitionIndex
+2021-08-10 11:14:56 root: INFO: instruction count: 4: __C1Compiled.addPartitionRegion
+2021-08-10 11:14:56 root: INFO: instruction count: 23: __C1Compiled.__m5DECODE_r_struct_of_r_struct_of_r_struct_of_r_int64ANDr_int32ENDENDEND_TO_r_tuple_of_r_tuple_of_r_tuple_of_r_int64ANDr_int32ENDENDEND
+2021-08-10 11:14:56 root: INFO: instruction count: 15: __C1Compiled.__m6INPLACE_DECODE_r_struct_of_r_struct_of_r_int64ANDr_int32ENDEND_TO_r_tuple_of_r_tuple_of_r_int64ANDr_int32ENDEND
+2021-08-10 11:14:56 root: INFO: instruction count: 22: __C1Compiled.__m7INPLACE_DECODE_r_struct_of_r_int64ANDr_int32END_TO_r_tuple_of_r_int64ANDr_int32END
+2021-08-10 11:14:56 root: INFO: instruction count: 8: __C1Compiled.__m8INPLACE_DECODE_r_int64_TO_r_int64
+2021-08-10 11:14:56 root: INFO: instruction count: 8: __C1Compiled.__m9INPLACE_DECODE_r_int32_TO_r_int32
+2021-08-10 11:14:56 root: INFO: instruction count: 32: __C1Compiled.addLiterals
+2021-08-10 11:14:56 root: INFO: finished execution of query hail_query_1
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON total 479.608ms self 58.087ms children 421.521ms %children 87.89%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR total 92.197ms self 0.431ms children 91.766ms %children 99.53%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/Verify total 0.275ms self 0.275ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation total 91.472ms self 44.776ms children 46.696ms %children 51.05%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize total 46.696ms self 1.057ms children 45.639ms %children 97.74%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/FoldConstants total 3.158ms self 3.158ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ExtractIntervalFilters total 3.563ms self 3.563ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/Simplify total 9.145ms self 9.145ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ForwardLets total 7.957ms self 7.957ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ForwardRelationalLets total 1.433ms self 1.433ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/PruneDeadFields total 13.320ms self 13.320ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/FoldConstants total 6.701ms self 6.701ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.016ms self 0.016ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/Simplify total 0.025ms self 0.025ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ForwardLets total 0.137ms self 0.137ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ForwardRelationalLets total 0.015ms self 0.015ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/PruneDeadFields total 0.031ms self 0.031ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/FoldConstants total 0.034ms self 0.034ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.004ms self 0.004ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/Simplify total 0.011ms self 0.011ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ForwardLets total 0.052ms self 0.052ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ForwardRelationalLets total 0.009ms self 0.009ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/PruneDeadFields total 0.027ms self 0.027ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/Verify total 0.019ms self 0.019ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/LowerMatrixToTable total 6.271ms self 0.018ms children 6.254ms %children 99.72%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/LowerMatrixToTable/Verify total 0.002ms self 0.002ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/LowerMatrixToTable/LoweringTransformation total 6.225ms self 6.225ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/LowerMatrixToTable/Verify total 0.027ms self 0.027ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable total 1.267ms self 0.010ms children 1.256ms %children 99.20%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/Verify total 0.003ms self 0.003ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation total 1.247ms self 0.850ms children 0.396ms %children 31.79%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize total 0.396ms self 0.042ms children 0.355ms %children 89.47%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/FoldConstants total 0.081ms self 0.081ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.015ms self 0.015ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/Simplify total 0.027ms self 0.027ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/ForwardLets total 0.169ms self 0.169ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/ForwardRelationalLets total 0.017ms self 0.017ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/PruneDeadFields total 0.047ms self 0.047ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/Verify total 0.007ms self 0.007ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable total 1.287ms self 0.016ms children 1.272ms %children 98.79%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/Verify total 0.006ms self 0.006ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation total 1.104ms self 1.104ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/Verify total 0.162ms self 0.162ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable total 0.794ms self 0.007ms children 0.787ms %children 99.06%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/Verify total 0.003ms self 0.003ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation total 0.779ms self 0.443ms children 0.336ms %children 43.11%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize total 0.336ms self 0.020ms children 0.316ms %children 94.12%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/FoldConstants total 0.075ms self 0.075ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.014ms self 0.014ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/Simplify total 0.025ms self 0.025ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/ForwardLets total 0.146ms self 0.146ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/ForwardRelationalLets total 0.017ms self 0.017ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/PruneDeadFields total 0.038ms self 0.038ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/Verify total 0.004ms self 0.004ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile total 309.286ms self 290.895ms children 18.391ms %children 5.95%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR total 7.053ms self 0.014ms children 7.039ms %children 99.80%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/Verify total 0.010ms self 0.010ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation total 7.022ms self 6.468ms children 0.554ms %children 7.89%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize total 0.554ms self 0.034ms children 0.520ms %children 93.88%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/FoldConstants total 0.160ms self 0.160ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.009ms self 0.009ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/Simplify total 0.024ms self 0.024ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ForwardLets total 0.146ms self 0.146ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ForwardRelationalLets total 0.016ms self 0.016ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/PruneDeadFields total 0.037ms self 0.037ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/FoldConstants total 0.032ms self 0.032ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.005ms self 0.005ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/Simplify total 0.012ms self 0.012ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ForwardLets total 0.053ms self 0.053ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ForwardRelationalLets total 0.009ms self 0.009ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/PruneDeadFields total 0.018ms self 0.018ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/Verify total 0.007ms self 0.007ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/InlineApplyIR total 0.249ms self 0.008ms children 0.241ms %children 96.73%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/InlineApplyIR/Verify total 0.007ms self 0.007ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/InlineApplyIR/LoweringTransformation total 0.224ms self 0.224ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/InlineApplyIR/Verify total 0.010ms self 0.010ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR total 0.636ms self 0.007ms children 0.629ms %children 98.91%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/Verify total 0.002ms self 0.002ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation total 0.624ms self 0.389ms children 0.235ms %children 37.64%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize total 0.235ms self 0.017ms children 0.218ms %children 92.90%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/FoldConstants total 0.049ms self 0.049ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.010ms self 0.010ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/Simplify total 0.019ms self 0.019ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/ForwardLets total 0.100ms self 0.100ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/ForwardRelationalLets total 0.012ms self 0.012ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/PruneDeadFields total 0.029ms self 0.029ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/Verify total 0.003ms self 0.003ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/LowerArrayAggsToRunAggs total 9.739ms self 0.010ms children 9.729ms %children 99.89%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/LowerArrayAggsToRunAggs/Verify total 0.004ms self 0.004ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/LowerArrayAggsToRunAggs/LoweringTransformation total 9.565ms self 9.565ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/LowerArrayAggsToRunAggs/Verify total 0.159ms self 0.159ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs total 0.715ms self 0.007ms children 0.708ms %children 98.98%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/Verify total 0.002ms self 0.002ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation total 0.702ms self 0.487ms children 0.216ms %children 30.70%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize total 0.216ms self 0.016ms children 0.200ms %children 92.57%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/FoldConstants total 0.038ms self 0.038ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.009ms self 0.009ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/Simplify total 0.018ms self 0.018ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/ForwardLets total 0.094ms self 0.094ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/ForwardRelationalLets total 0.012ms self 0.012ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/PruneDeadFields total 0.029ms self 0.029ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/Verify total 0.003ms self 0.003ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/InitializeCompiledFunction total 8.497ms self 8.497ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/RunCompiledFunction total 0.013ms self 0.013ms children 0.000ms %children 0.00%
+2021-08-10 11:14:56 root: INFO: timing SparkBackend.executeJSON/convertRegionValueToAnnotation total 1.908ms self 1.908ms children 0.000ms %children 0.00%
+2021-08-10 11:15:16 root: INFO: timing SparkBackend.parse_value_ir total 108.094ms self 108.094ms children 0.000ms %children 0.00%
+2021-08-10 11:15:16 root: INFO: starting execution of query hail_query_2 of initial size 43
+2021-08-10 11:15:16 root: INFO: optimize optimize: relationalLowerer, initial IR: before: IR size 43: 
+(GetField rows
+  (TableCollect
+    (TableHead 32
+      (TableMapRows
+        (TableMapRows
+          (TableOrderBy (Alocus Aalleles)
+            (MatrixRowsTable
+              (MatrixMapGlobals
+                (MatrixMapRows
+                  (MatrixRead None False False
+                    "{\"path\":\"/well/lindgren/UKBIOBANK/nbaya/wes_200k/ukb_wes_qc/data/filtered/ukb_wes_200k_filtered_chr21.mt/\",\"name\":\"MatrixNativeReader\"}")
+                  (InsertFields
+                    (SelectFields (locus alleles)
+                      (SelectFields 
+                        (locus alleles rsid qual filters info)
+                        (Ref va)))
+                    None
+                    (rsid (GetField rsid (Ref va)))))
+                (InsertFields
+                  (SelectFields () (SelectFields () (Ref global)))
+                  None))))
+          (InsertFields
+            (SelectFields ()
+              (SelectFields (locus alleles rsid) (Ref row)))
+            None
+            (locus (GetField locus (Ref row)))
+            (alleles (GetField alleles (Ref row)))
+            (rsid (GetField rsid (Ref row)))))
+        (InsertFields
+          (SelectFields ()
+            (SelectFields (locus alleles rsid) (Ref row)))
+          None
+          (locus
+            (ApplySpecial showStr () String
+              (GetField locus (Ref row))))
+          (alleles
+            (ApplySpecial showStr () String
+              (GetField alleles (Ref row))))
+          (rsid
+            (ApplySpecial showStr () String
+              (GetField rsid (Ref row)))))))))
+2021-08-10 11:15:16 root: INFO: optimize optimize: relationalLowerer, initial IR: after: IR size 19:
+(GetField rows
+  (TableCollect
+    (TableMapRows
+      (TableHead 32
+        (TableOrderBy (Alocus Aalleles)
+          (MatrixRowsTable
+            (MatrixRead
+              Matrix{global:Struct{},col_key:[s],col:Struct{s:String},row_key:[[locus,alleles]],row:Struct{locus:Locus(GRCh38),alleles:Array[String],rsid:String},entry:Struct{}}
+              True False
+              "{\"path\":\"/well/lindgren/UKBIOBANK/nbaya/wes_200k/ukb_wes_qc/data/filtered/ukb_wes_200k_filtered_chr21.mt/\",\"name\":\"MatrixNativeReader\"}"))))
+      (InsertFields
+        (SelectFields () (Ref row))
+        None
+        (locus
+          (ApplySpecial showStr () String
+            (GetField locus (Ref row))))
+        (alleles
+          (ApplySpecial showStr () String
+            (GetField alleles (Ref row))))
+        (rsid
+          (ApplySpecial showStr () String
+            (GetField rsid (Ref row))))))))
+2021-08-10 11:15:16 root: INFO: optimize optimize: relationalLowerer, after LowerMatrixToTable: before: IR size 32: 
+(GetField rows
+  (TableCollect
+    (TableMapRows
+      (TableHead 32
+        (TableOrderBy (Alocus Aalleles)
+          (TableMapRows
+            (TableMapGlobals
+              (TableMapRows
+                (TableMapGlobals
+                  (TableRead
+                    Table{global:Struct{},key:[locus,alleles],row:Struct{locus:Locus(GRCh38),alleles:Array[String],rsid:String}}
+                    False
+                    "{\"path\":\"/well/lindgren/UKBIOBANK/nbaya/wes_200k/ukb_wes_qc/data/filtered/ukb_wes_200k_filtered_chr21.mt//rows\",\"name\":\"TableNativeReader\"}")
+                  (InsertFields
+                    (Ref global)
+                    None
+                    (__cols (MakeArray Array[Struct{s:String}]))))
+                (InsertFields
+                  (Ref row)
+                  None
+                  (`the entries! [877f12a8827e18f61222c6c8c5fb04a8]`
+                    (MakeArray Array[Struct{}]))))
+              (SelectFields () (Ref global)))
+            (SelectFields (locus alleles rsid) (Ref row)))))
+      (InsertFields
+        (SelectFields () (Ref row))
+        None
+        (locus
+          (ApplySpecial showStr () String
+            (GetField locus (Ref row))))
+        (alleles
+          (ApplySpecial showStr () String
+            (GetField alleles (Ref row))))
+        (rsid
+          (ApplySpecial showStr () String
+            (GetField rsid (Ref row))))))))
+2021-08-10 11:15:16 root: INFO: Prune: InsertFields: eliminating field '__cols'
+2021-08-10 11:15:16 root: INFO: Prune: InsertFields: eliminating field 'the entries! [877f12a8827e18f61222c6c8c5fb04a8]'
+2021-08-10 11:15:16 root: INFO: optimize optimize: relationalLowerer, after LowerMatrixToTable: after: IR size 18:
+(GetField rows
+  (TableCollect
+    (TableMapRows
+      (TableHead 32
+        (TableOrderBy (Alocus Aalleles)
+          (TableRead
+            Table{global:Struct{},key:[locus,alleles],row:Struct{locus:Locus(GRCh38),alleles:Array[String],rsid:String}}
+            False
+            "{\"path\":\"/well/lindgren/UKBIOBANK/nbaya/wes_200k/ukb_wes_qc/data/filtered/ukb_wes_200k_filtered_chr21.mt//rows\",\"name\":\"TableNativeReader\"}")))
+      (InsertFields
+        (SelectFields () (Ref row))
+        None
+        (locus
+          (ApplySpecial showStr () String
+            (GetField locus (Ref row))))
+        (alleles
+          (ApplySpecial showStr () String
+            (GetField alleles (Ref row))))
+        (rsid
+          (ApplySpecial showStr () String
+            (GetField rsid (Ref row))))))))
+2021-08-10 11:15:16 root: INFO: interpreting non compilable node: TableCollect
+2021-08-10 11:15:16 root: INFO: decoder cache miss (0 hits, 1 misses, 0.000
+2021-08-10 11:15:16 root: INFO: instruction count: 3: __C16etypeDecode.<init>
+2021-08-10 11:15:16 root: INFO: instruction count: 5: __C16etypeDecode.apply
+2021-08-10 11:15:16 root: INFO: instruction count: 16: __C16etypeDecode.__m17DECODE_r_struct_of_END_TO_r_tuple_of_END
+2021-08-10 11:15:16 root: INFO: decoder cache miss (0 hits, 2 misses, 0.000
+2021-08-10 11:15:16 root: INFO: instruction count: 3: __C18etypeDecode.<init>
+2021-08-10 11:15:16 root: INFO: instruction count: 5: __C18etypeDecode.apply
+2021-08-10 11:15:16 root: INFO: instruction count: 98: __C18etypeDecode.__m19DECODE_r_struct_of_r_struct_of_r_binaryANDr_int32ENDANDr_array_of_r_binaryANDo_binaryANDo_float64ANDo_array_of_r_binaryANDr_struct_of_o_array_of_o_float64ANDo_array_of_o_int32ANDo_array_of_o_int32ANDo_int32ANDo_float64ENDEND_TO_r_tuple_of_r_locusANDr_array_of_r_stringANDo_stringEND
+2021-08-10 11:15:16 root: INFO: instruction count: 22: __C18etypeDecode.__m20INPLACE_DECODE_r_struct_of_r_binaryANDr_int32END_TO_r_tuple_of_r_binaryANDr_int32END
+2021-08-10 11:15:16 root: INFO: instruction count: 31: __C18etypeDecode.__m21INPLACE_DECODE_r_binary_TO_r_binary
+2021-08-10 11:15:16 root: INFO: instruction count: 8: __C18etypeDecode.__m22INPLACE_DECODE_r_int32_TO_r_int32
+2021-08-10 11:15:16 root: INFO: instruction count: 52: __C18etypeDecode.__m23INPLACE_DECODE_r_array_of_r_binary_TO_r_array_of_r_binary
+2021-08-10 11:15:16 root: INFO: instruction count: 31: __C18etypeDecode.__m24INPLACE_DECODE_o_binary_TO_o_binary
+2021-08-10 11:15:16 root: INFO: instruction count: 3: __C18etypeDecode.__m25SKIP_o_float64
+2021-08-10 11:15:16 root: INFO: instruction count: 22: __C18etypeDecode.__m26SKIP_o_array_of_r_binary
+2021-08-10 11:15:16 root: INFO: instruction count: 7: __C18etypeDecode.__m27SKIP_r_binary
+2021-08-10 11:15:16 root: INFO: instruction count: 86: __C18etypeDecode.__m28SKIP_r_struct_of_o_array_of_o_float64ANDo_array_of_o_int32ANDo_array_of_o_int32ANDo_int32ANDo_float64END
+2021-08-10 11:15:16 root: INFO: instruction count: 51: __C18etypeDecode.__m29SKIP_o_array_of_o_float64
+2021-08-10 11:15:16 root: INFO: instruction count: 51: __C18etypeDecode.__m30SKIP_o_array_of_o_int32
+2021-08-10 11:15:16 root: INFO: instruction count: 3: __C18etypeDecode.__m31SKIP_o_int32
+2021-08-10 11:15:16 MemoryStore: INFO: Block broadcast_2 stored as values in memory (estimated size 237.3 KB, free 5.2 GB)
+2021-08-10 11:15:16 MemoryStore: INFO: Block broadcast_2_piece0 stored as bytes in memory (estimated size 23.0 KB, free 5.2 GB)
+2021-08-10 11:15:16 BlockManagerInfo: INFO: Added broadcast_2_piece0 in memory on compe059.hpc.in.bmrc.ox.ac.uk:35081 (size: 23.0 KB, free: 5.2 GB)
+2021-08-10 11:15:16 SparkContext: INFO: Created broadcast 2 from broadcast at SparkBackend.scala:250
+2021-08-10 11:15:17 SparkContext: INFO: Starting job: runJob at ContextRDD.scala:351
+2021-08-10 11:15:17 DAGScheduler: INFO: Got job 0 (runJob at ContextRDD.scala:351) with 1 output partitions
+2021-08-10 11:15:17 DAGScheduler: INFO: Final stage: ResultStage 0 (runJob at ContextRDD.scala:351)
+2021-08-10 11:15:17 DAGScheduler: INFO: Parents of final stage: List()
+2021-08-10 11:15:17 DAGScheduler: INFO: Missing parents: List()
+2021-08-10 11:15:17 DAGScheduler: INFO: Submitting ResultStage 0 (MapPartitionsRDD[3] at mapPartitions at ContextRDD.scala:239), which has no missing parents
+2021-08-10 11:15:17 MemoryStore: INFO: Block broadcast_3 stored as values in memory (estimated size 158.5 KB, free 5.2 GB)
+2021-08-10 11:15:17 MemoryStore: INFO: Block broadcast_3_piece0 stored as bytes in memory (estimated size 64.6 KB, free 5.2 GB)
+2021-08-10 11:15:17 BlockManagerInfo: INFO: Added broadcast_3_piece0 in memory on compe059.hpc.in.bmrc.ox.ac.uk:35081 (size: 64.6 KB, free: 5.2 GB)
+2021-08-10 11:15:17 SparkContext: INFO: Created broadcast 3 from broadcast at DAGScheduler.scala:1161
+2021-08-10 11:15:17 DAGScheduler: INFO: Submitting 1 missing tasks from ResultStage 0 (MapPartitionsRDD[3] at mapPartitions at ContextRDD.scala:239) (first 15 tasks are for partitions Vector(0))
+2021-08-10 11:15:17 TaskSchedulerImpl: INFO: Adding task set 0.0 with 1 tasks
+2021-08-10 11:15:17 TaskSetManager: INFO: Starting task 0.0 in stage 0.0 (TID 0, localhost, executor driver, partition 0, PROCESS_LOCAL, 7699 bytes)
+2021-08-10 11:15:17 Executor: INFO: Running task 0.0 in stage 0.0 (TID 0)
+2021-08-10 11:15:17 root: INFO: RegionPool: initialized for thread 82: Executor task launch worker for task 0
+2021-08-10 11:15:17 Executor: INFO: Finished task 0.0 in stage 0.0 (TID 0). 752 bytes result sent to driver
+2021-08-10 11:15:17 TaskSetManager: INFO: Finished task 0.0 in stage 0.0 (TID 0) in 97 ms on localhost (executor driver) (1/1)
+2021-08-10 11:15:17 TaskSchedulerImpl: INFO: Removed TaskSet 0.0, whose tasks have all completed, from pool 
+2021-08-10 11:15:17 DAGScheduler: INFO: ResultStage 0 (runJob at ContextRDD.scala:351) finished in 0.158 s
+2021-08-10 11:15:17 DAGScheduler: INFO: Job 0 finished: runJob at ContextRDD.scala:351, took 0.200871 s
+2021-08-10 11:15:17 root: INFO: optimize optimize: compileLowerer, initial IR: before: IR size 15: 
+(Coalesce
+  (InsertFields
+    (SelectFields ()
+      (In
+        +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+        1))
+    None
+    (locus
+      (ApplySpecial showStr () String
+        (GetField locus
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1))))
+    (alleles
+      (ApplySpecial showStr () String
+        (GetField alleles
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1))))
+    (rsid
+      (ApplySpecial showStr () String
+        (GetField rsid
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1)))))
+  (Die
+    Struct{locus:String,alleles:String,rsid:String} -1
+    (Str "Internal e...")))
+2021-08-10 11:15:17 root: INFO: optimize optimize: compileLowerer, initial IR: after: IR size 15:
+(Coalesce
+  (InsertFields
+    (SelectFields ()
+      (In
+        +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+        1))
+    None
+    (locus
+      (ApplySpecial showStr () String
+        (GetField locus
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1))))
+    (alleles
+      (ApplySpecial showStr () String
+        (GetField alleles
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1))))
+    (rsid
+      (ApplySpecial showStr () String
+        (GetField rsid
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1)))))
+  (Die
+    Struct{locus:String,alleles:String,rsid:String} -1
+    (Str "Internal e...")))
+2021-08-10 11:15:17 root: INFO: optimize optimize: compileLowerer, after InlineApplyIR: before: IR size 15: 
+(Coalesce
+  (InsertFields
+    (SelectFields ()
+      (In
+        +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+        1))
+    None
+    (locus
+      (ApplySpecial showStr () String
+        (GetField locus
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1))))
+    (alleles
+      (ApplySpecial showStr () String
+        (GetField alleles
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1))))
+    (rsid
+      (ApplySpecial showStr () String
+        (GetField rsid
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1)))))
+  (Die
+    Struct{locus:String,alleles:String,rsid:String} -1
+    (Str "Internal e...")))
+2021-08-10 11:15:17 root: INFO: optimize optimize: compileLowerer, after InlineApplyIR: after: IR size 15:
+(Coalesce
+  (InsertFields
+    (SelectFields ()
+      (In
+        +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+        1))
+    None
+    (locus
+      (ApplySpecial showStr () String
+        (GetField locus
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1))))
+    (alleles
+      (ApplySpecial showStr () String
+        (GetField alleles
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1))))
+    (rsid
+      (ApplySpecial showStr () String
+        (GetField rsid
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1)))))
+  (Die
+    Struct{locus:String,alleles:String,rsid:String} -1
+    (Str "Internal e...")))
+2021-08-10 11:15:17 root: INFO: optimize optimize: compileLowerer, after LowerArrayAggsToRunAggs: before: IR size 15: 
+(Coalesce
+  (InsertFields
+    (SelectFields ()
+      (In
+        +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+        1))
+    None
+    (locus
+      (ApplySpecial showStr () String
+        (GetField locus
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1))))
+    (alleles
+      (ApplySpecial showStr () String
+        (GetField alleles
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1))))
+    (rsid
+      (ApplySpecial showStr () String
+        (GetField rsid
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1)))))
+  (Die
+    Struct{locus:String,alleles:String,rsid:String} -1
+    (Str "Internal e...")))
+2021-08-10 11:15:17 root: INFO: optimize optimize: compileLowerer, after LowerArrayAggsToRunAggs: after: IR size 15:
+(Coalesce
+  (InsertFields
+    (SelectFields ()
+      (In
+        +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+        1))
+    None
+    (locus
+      (ApplySpecial showStr () String
+        (GetField locus
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1))))
+    (alleles
+      (ApplySpecial showStr () String
+        (GetField alleles
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1))))
+    (rsid
+      (ApplySpecial showStr () String
+        (GetField rsid
+          (In
+            +PCStruct{locus:+PCLocus(GRCh38),alleles:+PCArray[+PCString],rsid:PCString}
+            1)))))
+  (Die
+    Struct{locus:String,alleles:String,rsid:String} -1
+    (Str "Internal e...")))
+2021-08-10 11:15:17 root: INFO: encoder cache miss (0 hits, 2 misses, 0.000)
+2021-08-10 11:15:17 root: INFO: instruction count: 3: __C64etypeEncode.<init>
+2021-08-10 11:15:17 root: INFO: instruction count: 5: __C64etypeEncode.apply
+2021-08-10 11:15:17 root: INFO: instruction count: 13: __C64etypeEncode.__m65ENCODE_r_tuple_of_r_stringEND_TO_r_struct_of_r_binaryEND
+2021-08-10 11:15:17 root: INFO: instruction count: 16: __C64etypeEncode.__m66ENCODE_r_binary_TO_r_binary
+2021-08-10 11:15:17 MemoryStore: INFO: Block broadcast_4 stored as values in memory (estimated size 128.0 B, free 5.2 GB)
+2021-08-10 11:15:17 MemoryStore: INFO: Block broadcast_4_piece0 stored as bytes in memory (estimated size 115.0 B, free 5.2 GB)
+2021-08-10 11:15:17 BlockManagerInfo: INFO: Added broadcast_4_piece0 in memory on compe059.hpc.in.bmrc.ox.ac.uk:35081 (size: 115.0 B, free: 5.2 GB)
+2021-08-10 11:15:17 SparkContext: INFO: Created broadcast 4 from broadcast at SparkBackend.scala:250
+2021-08-10 11:15:17 root: INFO: instruction count: 3: __C32Compiled.<init>
+2021-08-10 11:15:17 root: INFO: instruction count: 362: __C32Compiled.apply
+2021-08-10 11:15:17 root: INFO: instruction count: 23: __C32Compiled.__m42setup_null
+2021-08-10 11:15:17 root: INFO: instruction count: 5: __C32Compiled.__m45addIRIntermediate
+2021-08-10 11:15:17 root: INFO: instruction count: 12: __C32Compiled.__m48setup_null
+2021-08-10 11:15:17 root: INFO: instruction count: 12: __C32Compiled.__m51setup_null
+2021-08-10 11:15:17 root: INFO: instruction count: 12: __C32Compiled.__m56setup_null
+2021-08-10 11:15:17 root: INFO: instruction count: 9: __C32Compiled.setPartitionIndex
+2021-08-10 11:15:17 root: INFO: instruction count: 4: __C32Compiled.addPartitionRegion
+2021-08-10 11:15:17 root: INFO: instruction count: 23: __C32Compiled.__m62DECODE_r_struct_of_r_binaryEND_TO_r_tuple_of_r_stringEND
+2021-08-10 11:15:17 root: INFO: instruction count: 31: __C32Compiled.__m63INPLACE_DECODE_r_binary_TO_r_binary
+2021-08-10 11:15:17 root: INFO: instruction count: 36: __C32Compiled.addLiterals
+2021-08-10 11:15:17 root: INFO: instruction count: 3: __C39RGContainer_GRCh38.<init>
+2021-08-10 11:15:17 root: INFO: instruction count: 15: __C39RGContainer_GRCh38.<clinit>
+2021-08-10 11:15:17 root: INFO: encoder cache miss (0 hits, 3 misses, 0.000)
+2021-08-10 11:15:17 root: INFO: instruction count: 3: __C67etypeEncode.<init>
+2021-08-10 11:15:17 root: INFO: instruction count: 5: __C67etypeEncode.apply
+2021-08-10 11:15:17 root: INFO: instruction count: 33: __C67etypeEncode.__m68ENCODE_r_tuple_of_r_stringANDr_stringANDr_stringEND_TO_r_struct_of_r_binaryANDr_binaryANDr_binaryEND
+2021-08-10 11:15:17 root: INFO: instruction count: 16: __C67etypeEncode.__m69ENCODE_r_binary_TO_r_binary
+2021-08-10 11:15:17 SparkContext: INFO: Starting job: collect at RVD.scala:762
+2021-08-10 11:15:17 DAGScheduler: INFO: Got job 1 (collect at RVD.scala:762) with 1 output partitions
+2021-08-10 11:15:17 DAGScheduler: INFO: Final stage: ResultStage 1 (collect at RVD.scala:762)
+2021-08-10 11:15:17 DAGScheduler: INFO: Parents of final stage: List()
+2021-08-10 11:15:17 DAGScheduler: INFO: Missing parents: List()
+2021-08-10 11:15:17 DAGScheduler: INFO: Submitting ResultStage 1 (MapPartitionsRDD[9] at mapPartitions at ContextRDD.scala:160), which has no missing parents
+2021-08-10 11:15:17 MemoryStore: INFO: Block broadcast_5 stored as values in memory (estimated size 338.0 KB, free 5.2 GB)
+2021-08-10 11:15:17 MemoryStore: INFO: Block broadcast_5_piece0 stored as bytes in memory (estimated size 111.3 KB, free 5.2 GB)
+2021-08-10 11:15:17 BlockManagerInfo: INFO: Added broadcast_5_piece0 in memory on compe059.hpc.in.bmrc.ox.ac.uk:35081 (size: 111.3 KB, free: 5.2 GB)
+2021-08-10 11:15:17 SparkContext: INFO: Created broadcast 5 from broadcast at DAGScheduler.scala:1161
+2021-08-10 11:15:17 DAGScheduler: INFO: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[9] at mapPartitions at ContextRDD.scala:160) (first 15 tasks are for partitions Vector(0))
+2021-08-10 11:15:17 TaskSchedulerImpl: INFO: Adding task set 1.0 with 1 tasks
+2021-08-10 11:15:17 TaskSetManager: INFO: Starting task 0.0 in stage 1.0 (TID 1, localhost, executor driver, partition 0, PROCESS_LOCAL, 7793 bytes)
+2021-08-10 11:15:17 Executor: INFO: Running task 0.0 in stage 1.0 (TID 1)
+2021-08-10 11:15:17 Executor: INFO: Finished task 0.0 in stage 1.0 (TID 1). 2482 bytes result sent to driver
+2021-08-10 11:15:17 TaskSetManager: INFO: Finished task 0.0 in stage 1.0 (TID 1) in 42 ms on localhost (executor driver) (1/1)
+2021-08-10 11:15:17 TaskSchedulerImpl: INFO: Removed TaskSet 1.0, whose tasks have all completed, from pool 
+2021-08-10 11:15:17 DAGScheduler: INFO: ResultStage 1 (collect at RVD.scala:762) finished in 0.054 s
+2021-08-10 11:15:17 DAGScheduler: INFO: Job 1 finished: collect at RVD.scala:762, took 0.059320 s
+2021-08-10 11:15:17 root: INFO: decoder cache miss (0 hits, 3 misses, 0.000
+2021-08-10 11:15:17 root: INFO: instruction count: 3: __C70etypeDecode.<init>
+2021-08-10 11:15:17 root: INFO: instruction count: 5: __C70etypeDecode.apply
+2021-08-10 11:15:17 root: INFO: instruction count: 37: __C70etypeDecode.__m71DECODE_r_struct_of_r_binaryANDr_binaryANDr_binaryEND_TO_r_tuple_of_r_stringANDr_stringANDr_stringEND
+2021-08-10 11:15:17 root: INFO: instruction count: 31: __C70etypeDecode.__m72INPLACE_DECODE_r_binary_TO_r_binary
+2021-08-10 11:15:17 root: INFO: took 963.980ms
+2021-08-10 11:15:17 root: INFO: optimize optimize: relationalLowerer, after InterpretNonCompilable: before: IR size 2: 
+(GetField rows
+  (Literal
+    Struct{rows:Array[Struct{locus:String,alleles:String,rsid:String}],global:Struct{}}
+    <literal value>))
+2021-08-10 11:15:17 root: INFO: optimize optimize: relationalLowerer, after InterpretNonCompilable: after: IR size 1:
+(Literal
+  Array[Struct{locus:String,alleles:String,rsid:String}]
+  <literal value>)
+2021-08-10 11:15:17 root: INFO: optimize optimize: compileLowerer, initial IR: before: IR size 2: 
+(MakeTuple (0)
+  (Literal
+    Array[Struct{locus:String,alleles:String,rsid:String}]
+    <literal value>))
+2021-08-10 11:15:17 root: INFO: optimize optimize: compileLowerer, initial IR: after: IR size 1:
+(Literal
+  Tuple[Array[Struct{locus:String,alleles:String,rsid:String}]]
+  <literal value>)
+2021-08-10 11:15:17 root: INFO: optimize optimize: compileLowerer, after InlineApplyIR: before: IR size 1: 
+(Literal
+  Tuple[Array[Struct{locus:String,alleles:String,rsid:String}]]
+  <literal value>)
+2021-08-10 11:15:17 root: INFO: optimize optimize: compileLowerer, after InlineApplyIR: after: IR size 1:
+(Literal
+  Tuple[Array[Struct{locus:String,alleles:String,rsid:String}]]
+  <literal value>)
+2021-08-10 11:15:17 root: INFO: optimize optimize: compileLowerer, after LowerArrayAggsToRunAggs: before: IR size 1: 
+(Literal
+  Tuple[Array[Struct{locus:String,alleles:String,rsid:String}]]
+  <literal value>)
+2021-08-10 11:15:17 root: INFO: optimize optimize: compileLowerer, after LowerArrayAggsToRunAggs: after: IR size 1:
+(Literal
+  Tuple[Array[Struct{locus:String,alleles:String,rsid:String}]]
+  <literal value>)
+2021-08-10 11:15:17 root: INFO: encoder cache miss (0 hits, 4 misses, 0.000)
+2021-08-10 11:15:17 root: INFO: instruction count: 3: __C82etypeEncode.<init>
+2021-08-10 11:15:17 root: INFO: instruction count: 5: __C82etypeEncode.apply
+2021-08-10 11:15:17 root: INFO: instruction count: 9: __C82etypeEncode.__m83ENCODE_r_tuple_of_r_tuple_of_r_array_of_r_tuple_of_r_stringANDr_stringANDr_stringENDENDEND_TO_r_struct_of_r_struct_of_r_array_of_r_struct_of_r_binaryANDr_binaryANDr_binaryENDENDEND
+2021-08-10 11:15:17 root: INFO: instruction count: 13: __C82etypeEncode.__m84ENCODE_r_tuple_of_r_array_of_r_tuple_of_r_binaryANDr_binaryANDr_binaryENDEND_TO_r_struct_of_r_array_of_r_struct_of_r_binaryANDr_binaryANDr_binaryENDEND
+2021-08-10 11:15:17 root: INFO: instruction count: 49: __C82etypeEncode.__m85ENCODE_r_array_of_r_tuple_of_r_binaryANDr_binaryANDr_binaryEND_TO_r_array_of_r_struct_of_r_binaryANDr_binaryANDr_binaryEND
+2021-08-10 11:15:17 root: INFO: instruction count: 33: __C82etypeEncode.__m86ENCODE_r_tuple_of_r_binaryANDr_binaryANDr_binaryEND_TO_r_struct_of_r_binaryANDr_binaryANDr_binaryEND
+2021-08-10 11:15:17 root: INFO: instruction count: 16: __C82etypeEncode.__m87ENCODE_r_binary_TO_r_binary
+2021-08-10 11:15:17 MemoryStore: INFO: Block broadcast_6 stored as values in memory (estimated size 1768.0 B, free 5.2 GB)
+2021-08-10 11:15:17 MemoryStore: INFO: Block broadcast_6_piece0 stored as bytes in memory (estimated size 602.0 B, free 5.2 GB)
+2021-08-10 11:15:17 BlockManagerInfo: INFO: Added broadcast_6_piece0 in memory on compe059.hpc.in.bmrc.ox.ac.uk:35081 (size: 602.0 B, free: 5.2 GB)
+2021-08-10 11:15:17 SparkContext: INFO: Created broadcast 6 from broadcast at SparkBackend.scala:250
+2021-08-10 11:15:17 root: INFO: instruction count: 3: __C73Compiled.<init>
+2021-08-10 11:15:17 root: INFO: instruction count: 3: __C73Compiled.apply
+2021-08-10 11:15:17 root: INFO: instruction count: 9: __C73Compiled.setPartitionIndex
+2021-08-10 11:15:17 root: INFO: instruction count: 4: __C73Compiled.addPartitionRegion
+2021-08-10 11:15:17 root: INFO: instruction count: 23: __C73Compiled.__m77DECODE_r_struct_of_r_struct_of_r_array_of_r_struct_of_r_binaryANDr_binaryANDr_binaryENDENDEND_TO_r_tuple_of_r_tuple_of_r_array_of_r_tuple_of_r_stringANDr_stringANDr_stringENDENDEND
+2021-08-10 11:15:17 root: INFO: instruction count: 15: __C73Compiled.__m78INPLACE_DECODE_r_struct_of_r_array_of_r_struct_of_r_binaryANDr_binaryANDr_binaryENDEND_TO_r_tuple_of_r_array_of_r_tuple_of_r_binaryANDr_binaryANDr_binaryENDEND
+2021-08-10 11:15:17 root: INFO: instruction count: 52: __C73Compiled.__m79INPLACE_DECODE_r_array_of_r_struct_of_r_binaryANDr_binaryANDr_binaryEND_TO_r_array_of_r_tuple_of_r_binaryANDr_binaryANDr_binaryEND
+2021-08-10 11:15:17 root: INFO: instruction count: 29: __C73Compiled.__m80INPLACE_DECODE_r_struct_of_r_binaryANDr_binaryANDr_binaryEND_TO_r_tuple_of_r_binaryANDr_binaryANDr_binaryEND
+2021-08-10 11:15:17 root: INFO: instruction count: 31: __C73Compiled.__m81INPLACE_DECODE_r_binary_TO_r_binary
+2021-08-10 11:15:17 root: INFO: instruction count: 32: __C73Compiled.addLiterals
+2021-08-10 11:15:17 root: INFO: finished execution of query hail_query_2
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON total 1.087s self 6.534ms children 1.080s %children 99.40%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR total 48.840ms self 0.013ms children 48.827ms %children 99.97%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/Verify total 0.037ms self 0.037ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation total 48.765ms self 13.366ms children 35.399ms %children 72.59%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize total 35.399ms self 0.154ms children 35.245ms %children 99.57%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/FoldConstants total 0.505ms self 0.505ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ExtractIntervalFilters total 1.392ms self 1.392ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/Simplify total 6.985ms self 6.985ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ForwardLets total 2.941ms self 2.941ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ForwardRelationalLets total 0.200ms self 0.200ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/PruneDeadFields total 14.407ms self 14.407ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/FoldConstants total 0.424ms self 0.424ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.396ms self 0.396ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/Simplify total 0.479ms self 0.479ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ForwardLets total 1.808ms self 1.808ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ForwardRelationalLets total 0.187ms self 0.187ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/PruneDeadFields total 1.531ms self 1.531ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/FoldConstants total 0.320ms self 0.320ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.267ms self 0.267ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/Simplify total 0.261ms self 0.261ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ForwardLets total 1.389ms self 1.389ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/ForwardRelationalLets total 0.176ms self 0.176ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/LoweringTransformation/Optimize/PruneDeadFields total 1.576ms self 1.576ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, initial IR/Verify total 0.025ms self 0.025ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/LowerMatrixToTable total 7.787ms self 0.012ms children 7.775ms %children 99.84%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/LowerMatrixToTable/Verify total 0.017ms self 0.017ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/LowerMatrixToTable/LoweringTransformation total 7.660ms self 7.660ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/LowerMatrixToTable/Verify total 0.098ms self 0.098ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable total 26.171ms self 0.012ms children 26.159ms %children 99.95%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/Verify total 0.035ms self 0.035ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation total 26.100ms self 6.371ms children 19.729ms %children 75.59%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize total 19.729ms self 0.156ms children 19.573ms %children 99.21%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/FoldConstants total 1.153ms self 1.153ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.474ms self 0.474ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/Simplify total 0.477ms self 0.477ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/ForwardLets total 4.065ms self 4.065ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/ForwardRelationalLets total 0.308ms self 0.308ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/PruneDeadFields total 4.406ms self 4.406ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/FoldConstants total 0.405ms self 0.405ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.392ms self 0.392ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/Simplify total 0.552ms self 0.552ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/ForwardLets total 1.952ms self 1.952ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/ForwardRelationalLets total 0.214ms self 0.214ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/PruneDeadFields total 1.355ms self 1.355ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/FoldConstants total 0.276ms self 0.276ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.260ms self 0.260ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/Simplify total 0.226ms self 0.226ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/ForwardLets total 1.550ms self 1.550ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/ForwardRelationalLets total 0.273ms self 0.273ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/LoweringTransformation/Optimize/PruneDeadFields total 1.234ms self 1.234ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after LowerMatrixToTable/Verify total 0.023ms self 0.023ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable total 964.323ms self 0.016ms children 964.307ms %children 100.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/Verify total 0.024ms self 0.024ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation total 964.249ms self 942.141ms children 22.107ms %children 2.29%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, initial IR total 10.101ms self 0.031ms children 10.070ms %children 99.69%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, initial IR/Verify total 0.175ms self 0.175ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, initial IR/LoweringTransformation total 9.871ms self 4.008ms children 5.863ms %children 59.40%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize total 5.863ms self 0.098ms children 5.765ms %children 98.33%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/FoldConstants total 0.883ms self 0.883ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.113ms self 0.113ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/Simplify total 0.680ms self 0.680ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ForwardLets total 1.909ms self 1.909ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ForwardRelationalLets total 0.133ms self 0.133ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/PruneDeadFields total 2.045ms self 2.045ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, initial IR/Verify total 0.025ms self 0.025ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/InlineApplyIR total 0.199ms self 0.007ms children 0.192ms %children 96.68%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/InlineApplyIR/Verify total 0.061ms self 0.061ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/InlineApplyIR/LoweringTransformation total 0.075ms self 0.075ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/InlineApplyIR/Verify total 0.056ms self 0.056ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after InlineApplyIR total 5.056ms self 0.009ms children 5.047ms %children 99.83%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after InlineApplyIR/Verify total 0.012ms self 0.012ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation total 4.972ms self 2.637ms children 2.334ms %children 46.95%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize total 2.334ms self 0.045ms children 2.289ms %children 98.08%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/FoldConstants total 0.124ms self 0.124ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.064ms self 0.064ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/Simplify total 0.199ms self 0.199ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/ForwardLets total 0.971ms self 0.971ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/ForwardRelationalLets total 0.092ms self 0.092ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/PruneDeadFields total 0.839ms self 0.839ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after InlineApplyIR/Verify total 0.063ms self 0.063ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/LowerArrayAggsToRunAggs total 2.310ms self 0.009ms children 2.301ms %children 99.60%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/LowerArrayAggsToRunAggs/Verify total 0.040ms self 0.040ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/LowerArrayAggsToRunAggs/LoweringTransformation total 2.212ms self 2.212ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/LowerArrayAggsToRunAggs/Verify total 0.048ms self 0.048ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after LowerArrayAggsToRunAggs total 4.441ms self 0.009ms children 4.431ms %children 99.79%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after LowerArrayAggsToRunAggs/Verify total 0.011ms self 0.011ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation total 4.411ms self 2.317ms children 2.094ms %children 47.47%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize total 2.094ms self 0.037ms children 2.057ms %children 98.24%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/FoldConstants total 0.144ms self 0.144ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.069ms self 0.069ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/Simplify total 0.196ms self 0.196ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/ForwardLets total 0.857ms self 0.857ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/ForwardRelationalLets total 0.094ms self 0.094ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/PruneDeadFields total 0.696ms self 0.696ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/LoweringTransformation/optimize: compileLowerer, after LowerArrayAggsToRunAggs/Verify total 0.009ms self 0.009ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InterpretNonCompilable/Verify total 0.035ms self 0.035ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable total 1.055ms self 0.007ms children 1.048ms %children 99.30%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/Verify total 0.003ms self 0.003ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation total 1.041ms self 0.530ms children 0.511ms %children 49.11%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize total 0.511ms self 0.028ms children 0.483ms %children 94.52%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/FoldConstants total 0.197ms self 0.197ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.009ms self 0.009ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/Simplify total 0.017ms self 0.017ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/ForwardLets total 0.106ms self 0.106ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/ForwardRelationalLets total 0.019ms self 0.019ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/PruneDeadFields total 0.031ms self 0.031ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/FoldConstants total 0.028ms self 0.028ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.004ms self 0.004ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/Simplify total 0.007ms self 0.007ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/ForwardLets total 0.045ms self 0.045ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/ForwardRelationalLets total 0.008ms self 0.008ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/LoweringTransformation/Optimize/PruneDeadFields total 0.015ms self 0.015ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/optimize: relationalLowerer, after InterpretNonCompilable/Verify total 0.003ms self 0.003ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile total 29.951ms self 27.496ms children 2.455ms %children 8.20%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR total 0.841ms self 0.007ms children 0.834ms %children 99.16%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/Verify total 0.004ms self 0.004ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation total 0.828ms self 0.432ms children 0.397ms %children 47.88%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize total 0.397ms self 0.028ms children 0.368ms %children 92.93%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/FoldConstants total 0.136ms self 0.136ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.006ms self 0.006ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/Simplify total 0.009ms self 0.009ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ForwardLets total 0.076ms self 0.076ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ForwardRelationalLets total 0.010ms self 0.010ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/PruneDeadFields total 0.023ms self 0.023ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/FoldConstants total 0.020ms self 0.020ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.005ms self 0.005ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/Simplify total 0.006ms self 0.006ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ForwardLets total 0.056ms self 0.056ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/ForwardRelationalLets total 0.008ms self 0.008ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/LoweringTransformation/Optimize/PruneDeadFields total 0.015ms self 0.015ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, initial IR/Verify total 0.002ms self 0.002ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/InlineApplyIR total 0.026ms self 0.005ms children 0.021ms %children 80.44%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/InlineApplyIR/Verify total 0.006ms self 0.006ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/InlineApplyIR/LoweringTransformation total 0.011ms self 0.011ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/InlineApplyIR/Verify total 0.004ms self 0.004ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR total 0.351ms self 0.006ms children 0.345ms %children 98.37%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/Verify total 0.001ms self 0.001ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation total 0.343ms self 0.184ms children 0.159ms %children 46.33%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize total 0.159ms self 0.013ms children 0.146ms %children 91.78%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/FoldConstants total 0.025ms self 0.025ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.006ms self 0.006ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/Simplify total 0.008ms self 0.008ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/ForwardLets total 0.077ms self 0.077ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/ForwardRelationalLets total 0.010ms self 0.010ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/LoweringTransformation/Optimize/PruneDeadFields total 0.020ms self 0.020ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after InlineApplyIR/Verify total 0.002ms self 0.002ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/LowerArrayAggsToRunAggs total 0.786ms self 0.009ms children 0.777ms %children 98.90%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/LowerArrayAggsToRunAggs/Verify total 0.005ms self 0.005ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/LowerArrayAggsToRunAggs/LoweringTransformation total 0.759ms self 0.759ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/LowerArrayAggsToRunAggs/Verify total 0.014ms self 0.014ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs total 0.450ms self 0.042ms children 0.408ms %children 90.72%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/Verify total 0.003ms self 0.003ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation total 0.403ms self 0.228ms children 0.175ms %children 43.33%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize total 0.175ms self 0.015ms children 0.160ms %children 91.40%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/FoldConstants total 0.031ms self 0.031ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/ExtractIntervalFilters total 0.007ms self 0.007ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/Simplify total 0.010ms self 0.010ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/ForwardLets total 0.073ms self 0.073ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/ForwardRelationalLets total 0.011ms self 0.011ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/LoweringTransformation/Optimize/PruneDeadFields total 0.027ms self 0.027ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/Compile/optimize: compileLowerer, after LowerArrayAggsToRunAggs/Verify total 0.002ms self 0.002ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/InitializeCompiledFunction total 0.972ms self 0.972ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/RunCompiledFunction total 0.008ms self 0.008ms children 0.000ms %children 0.00%
+2021-08-10 11:15:17 root: INFO: timing SparkBackend.executeJSON/convertRegionValueToAnnotation total 0.901ms self 0.901ms children 0.000ms %children 0.00%
