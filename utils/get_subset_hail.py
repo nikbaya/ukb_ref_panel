@@ -74,8 +74,9 @@ def main(args):
 if __name__=='__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument("--input_path", default=None, help="Path to VCF/MatrixTable/PLINK dataset to subset")
-    parser.add_argument("--input_type", default=None, help="Type of input dataset (options: 'vcf', 'mt', 'plink')")
+    parser.add_argument("--input_type", default=None, help="Type of input dataset. Options: 'vcf', 'mt', 'plink'")
     parser.add_argument("--num_samples", help="Number of samples to subset")
+    parser.add_argument("--ancestry", default="EUR", help="Ancestry subset to use. Options: EUR (genetically-confirmed Europeans), ALL (all individuals, no ancestry filter)")
     parser.add_argument("--out_path", help="Path to output file")
     parser.add_argument("--out_type", help="Type of output dataset (options: 'vcf', 'mt', 'plink')")
     args = parser.parse_args()
