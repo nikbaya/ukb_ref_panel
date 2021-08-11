@@ -62,7 +62,8 @@ def write_output(mt, output_type, output_path):
             dataset=mt,
             output=output_path,
             fam_id=mt.s,
-            ind_id=mt.s
+            ind_id=mt.s,
+            varid=mt.rsid
         )
 
 
