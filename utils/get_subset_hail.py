@@ -58,9 +58,11 @@ def write_output(mt, output_type, output_path):
         mt.write(output_path)
     elif output_type == "plink":
         assert "." not in output_path.split("/")[-1]
-        mt.export_plink(
+        hl.export_plink(
             dataset=mt,
-            output=output_path
+            output=output_path,
+            fam_id=mt.s,
+            ind_id=mt.s
         )
 
 
@@ -79,7 +81,7 @@ def main(args):
 
     mt = get_subset(
         mt=mt,
-        num_samples=args.num_samples
+        num_samples=int(args.num_samples)
     )
 
     write_output(
@@ -98,9 +100,9 @@ if __name__ == '__main__':
     parser.add_argument("--num_samples", help="Number of samples to subset")
     parser.add_argument("--ancestry", default="eur",
                         help="Ancestry subset to use. Options: eur (genetically-confirmed Europeans), all (all individuals, no ancestry filter)")
-    parser.add_argument("--out_path", help="Path to output file")
+    parser.add_argument("--output_path", help="Path to output file")
     parser.add_argument(
-        "--out_type", help="Type of output dataset (options: 'vcf', 'mt', 'plink')")
+        "--output_type", help="Type of output dataset (options: 'vcf', 'mt', 'plink')")
     args = parser.parse_args()
 
     main(args)
