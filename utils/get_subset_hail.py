@@ -12,10 +12,15 @@ import numpy as np
 
 
 def read_input(input_type, input_path):
-    assert input_type in {"mt"}
+    assert input_type in {"mt", "bgen"}
     if input_type == "mt":
         mt = hl.read_matrix_table(
             path=input_path
+        )
+    elif input_type == "bgen":
+        mt = hl.import_bgen(
+            path=input_path,
+            entry_fields=["GT", "GP"]
         )
     elif input_type == "vcf":
         pass
