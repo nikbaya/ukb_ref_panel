@@ -2,8 +2,7 @@
 """
 Export subset of individuals in post-QC VCFs.
 
-Created: 2021/08/10
-@author: nbaya
+@author: Nikolas Baya (2021/08/10)
 """
 
 import argparse
@@ -11,11 +10,19 @@ import hail as hl
 import numpy as np
 
 
-def read_input(input_type, input_path):
-    assert input_type in {"mt"}
+def read_input(input_type, input_path, bgen_samples=None):
+    assert input_type in {"mt", "bgen"}
     if input_type == "mt":
         mt = hl.read_matrix_table(
             path=input_path
+        )
+    elif input_type == "bgen":
+        if not hl.hadoop_is_dir(input_path+".idx2"):
+            hl.index_bgen(input_path)
+        mt = hl.import_bgen(
+            path=input_path,
+            entry_fields=["GT"], # Can also read in GP and dosage
+            sample_file=bgen_samples
         )
     elif input_type == "vcf":
         pass
@@ -72,7 +79,8 @@ def main(args):
 
     mt = read_input(
         input_type=args.input_type,
-        input_path=args.input_path
+        input_path=args.input_path,
+        bgen_samples=args.bgen_samples
     )
 
     mt = filter_to_ancestry(
@@ -98,6 +106,8 @@ if __name__ == '__main__':
                         help="Path to VCF/MatrixTable/PLINK dataset to subset")
     parser.add_argument("--input_type", default=None,
                         help="Type of input dataset. Options: 'vcf', 'mt', 'plink'")
+    parser.add_argument("--bgen_samples", default=None,
+                        help="BGEN sample file")
     parser.add_argument("--num_samples", help="Number of samples to subset")
     parser.add_argument("--ancestry", default="eur",
                         help="Ancestry subset to use. Options: eur (genetically-confirmed Europeans), all (all individuals, no ancestry filter)")

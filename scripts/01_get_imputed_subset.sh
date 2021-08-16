@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 #
-# Creates reference panel by extracting subset of samples from UKB WES
+# Creates reference panel by extracting subset of samples from UKB imputed V3
 #
-# Author: Nik Baya (2021-08-10)
+# Author: Nik Baya (2021-08-12)
 #
-#$ -N get_subset
+#$ -N get_imp_subset
 #$ -wd /well/lindgren/UKBIOBANK/nbaya/resources/ref/ukb_wes_200k/ukb_wes_ref_panel
-#$ -o logs/get_subset.log
-#$ -e logs/get_subset.log
+#$ -o logs/get_imp_subset.log
+#$ -e logs/get_imp_subset.log
 #$ -P lindgren.prjc
 #$ -pe shmem 8
 #$ -q short.qe
@@ -19,7 +19,6 @@ module purge
 source utils/bash_utils.sh
 
 # directories
-readonly in_dir="/well/lindgren/UKBIOBANK/nbaya/wes_200k/ukb_wes_qc/data/filtered"
 readonly spark_dir="logs/spark"
 readonly vcf_dir="data/vcf"
 readonly plink_dir="data/plink"
@@ -29,11 +28,12 @@ readonly chr=${SGE_TASK_ID} # only works for autosomes
 readonly num_samples=5000
 readonly ancestry="eur" # ancestry to subset to before sampling. Options: "eur" (genetically-confirmed Europeans), "all" (all ancestries)
 
-# input path
-readonly in="${in_dir}/ukb_wes_200k_filtered_chr${chr}.mt"
+# input paths
+readonly in="data/imputed_v3_bgen/ukb_imp_chr${chr}_v3.bgen"
+readonly bgen_samples="/well/lindgren/UKBIOBANK/DATA/SAMPLE_FAM/ukb11867_imp_chr1_v3_s487395.sample" 
 
 # output paths
-readonly out_prefix="ukb_wes_200k_${ancestry}_ref_panel_$(( num_samples / 1000 ))k_chr${chr}"
+readonly out_prefix="ukb_imp_v3_${ancestry}_ref_panel_$(( num_samples / 1000 ))k_chr${chr}"
 readonly out_vcf="${vcf_dir}/${out_prefix}.vcf.bgz"
 readonly out_plink="${plink_dir}/${out_prefix}"
 
@@ -47,7 +47,8 @@ if [ $( ls -1 ${out_prefix}.{bed,bim,fam} 2> /dev/null | wc -l ) -ne 3 ]; then
 
   python3 ${hail_script} \
     --input_path ${in} \
-    --input_type "mt" \
+    --input_type "bgen" \
+    --bgen_samples ${bgen_samples} \
     --num_samples ${num_samples} \
     --ancestry ${ancestry} \
     --output_path ${out_plink} \
