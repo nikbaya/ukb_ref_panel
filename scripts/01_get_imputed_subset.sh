@@ -19,7 +19,6 @@ module purge
 source utils/bash_utils.sh
 
 # directories
-readonly in_dir="/well/ukbb-wtchg/v3/imputation"
 readonly spark_dir="logs/spark"
 readonly vcf_dir="data/vcf"
 readonly plink_dir="data/plink"
@@ -29,8 +28,9 @@ readonly chr=${SGE_TASK_ID} # only works for autosomes
 readonly num_samples=5000
 readonly ancestry="eur" # ancestry to subset to before sampling. Options: "eur" (genetically-confirmed Europeans), "all" (all ancestries)
 
-# input path
-readonly in="${in_dir}/ukb_imp_chr${chr}_v3.bgen"
+# input paths
+readonly in="data/imputed_v3_bgen/ukb_imp_chr${chr}_v3.bgen"
+readonly bgen_samples="/well/lindgren/UKBIOBANK/DATA/SAMPLE_FAM/ukb11867_imp_chr1_v3_s487395.sample" 
 
 # output paths
 readonly out_prefix="ukb_imp_v3_${ancestry}_ref_panel_$(( num_samples / 1000 ))k_chr${chr}"
@@ -48,6 +48,7 @@ if [ $( ls -1 ${out_prefix}.{bed,bim,fam} 2> /dev/null | wc -l ) -ne 3 ]; then
   python3 ${hail_script} \
     --input_path ${in} \
     --input_type "bgen" \
+    --bgen_samples ${bgen_samples} \
     --num_samples ${num_samples} \
     --ancestry ${ancestry} \
     --output_path ${out_plink} \
