@@ -5,7 +5,7 @@
 # Author: Nik Baya (2021-08-10)
 #
 #$ -N get_wes_subset
-#$ -wd /well/lindgren/UKBIOBANK/nbaya/resources/ref/ukb_wes_200k/ukb_wes_ref_panel
+#$ -wd /well/lindgren/UKBIOBANK/nbaya/resources/ref/ukb_wes_200k/ukb_ref_panel
 #$ -o logs/get_wes_subset.log
 #$ -e logs/get_wes_subset.log
 #$ -P lindgren.prjc

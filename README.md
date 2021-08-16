@@ -1,1 +1,1 @@
-# ukb_wes_ref_panel
+# Making a UK Biobank reference panel

@@ -5,7 +5,7 @@
 # Author: Nik Baya (2021-08-12)
 #
 #$ -N get_imp_subset
-#$ -wd /well/lindgren/UKBIOBANK/nbaya/resources/ref/ukb_wes_200k/ukb_wes_ref_panel
+#$ -wd /well/lindgren/UKBIOBANK/nbaya/resources/ref/ukb_wes_200k/ukb_ref_panel
 #$ -o logs/get_imp_subset.log
 #$ -e logs/get_imp_subset.log
 #$ -P lindgren.prjc
