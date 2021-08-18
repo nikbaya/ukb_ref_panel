@@ -1,2 +1,5 @@
 data/
 logs/
+hail*.log
+*tsv
+.*.crc

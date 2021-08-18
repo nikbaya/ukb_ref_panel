@@ -2,16 +2,16 @@
 #
 # Creates reference panel by extracting subset of samples from UKB WES
 #
-# Author: Nik Baya (2021-08-10)
+# Author: Nik Baya (2021-08-18)
 #
 #$ -N get_wes_subset
 #$ -wd /well/lindgren/UKBIOBANK/nbaya/resources/ref/ukb_wes_200k/ukb_ref_panel
 #$ -o logs/get_wes_subset.log
 #$ -e logs/get_wes_subset.log
 #$ -P lindgren.prjc
-#$ -pe shmem 8
+#$ -pe shmem 1
 #$ -q short.qe
-#$ -t 1-22
+#$ -V # necessar for `qsub` command to be available
 
 set -o errexit
 set -o nounset
@@ -21,39 +21,58 @@ source utils/bash_utils.sh
 # directories
 readonly in_dir="/well/lindgren/UKBIOBANK/nbaya/wes_200k/ukb_wes_qc/data/filtered"
 readonly spark_dir="logs/spark"
-readonly vcf_dir="data/vcf"
-readonly plink_dir="data/plink"
+readonly samples_dir="data/samples"
 
 # options
-readonly chr=${SGE_TASK_ID} # only works for autosomes
 readonly num_samples=5000
 readonly ancestry="eur" # ancestry to subset to before sampling. Options: "eur" (genetically-confirmed Europeans), "all" (all ancestries)
 
 # input path
-readonly in="${in_dir}/ukb_wes_200k_filtered_chr${chr}.mt"
+readonly input_prefix="${in_dir}/ukb_wes_200k_filtered"
+readonly input_type="mt"
+readonly input_path="${input_prefix}_chr21.${input_type}" # use chr21 MatrixTable because it's the smallest for WES and fastest to work with
 
 # output paths
-readonly out_prefix="ukb_wes_200k_${ancestry}_ref_panel_$(( num_samples / 1000 ))k_chr${chr}"
-readonly out_vcf="${vcf_dir}/${out_prefix}.vcf.bgz"
-readonly out_plink="${plink_dir}/${out_prefix}"
+readonly output_prefix="ukb_wes_200k_${ancestry}_ref_panel_$(( num_samples / 1000 ))k"
+readonly output_path="${samples_dir}/${output_prefix}.tsv"
 
 # hail script
 readonly hail_script="utils/get_subset_hail.py"
 
-if [ $( ls -1 ${out_prefix}.{bed,bim,fam} 2> /dev/null | wc -l ) -ne 3 ]; then
+# write list of samples in subset
+if [ ! -f ${output_path} ]; then
   SECONDS=0
-  mkdir -p ${plink_dir}
+  mkdir -p ${samples_dir}
   set_up_hail
 
   python3 ${hail_script} \
-    --input_path ${in} \
-    --input_type "mt" \
+    --input_path ${input_path} \
+    --input_type ${input_type} \
+    --choose_samples \
     --num_samples ${num_samples} \
     --ancestry ${ancestry} \
-    --output_path ${out_plink} \
-    --output_type "plink"
+    --output_path "${output_path}" \
+    --output_type "tsv"
 
-  print_update "Finished writing ${out_plink}.{bed,bim,fam}" "${SECONDS}"
+  print_update "Finished writing ${output_path}" "${SECONDS}"
 fi
 
+# submit jobs for extracting chosen sample subset from each per-chromosome file
+readonly write_subset_script="utils/_write_subset.sh"
 
+readonly input_path_template="${input_prefix}_chr<CHROM>.mt"
+readonly output_type="plink"
+readonly output_path_template="data/${output_type}/${output_prefix}_chr<CHROM>" # if output_type="plink", don't include a file suffix
+readonly individuals_to_keep=${output_path}
+
+qsub -N "_write_wes_subset" \
+  -t 21-22 \
+  -pe shmem 1 \
+  -o ${SGE_STDOUT_PATH} \
+  -e ${SGE_STDERR_PATH} \
+  ${write_subset_script} \
+  ${input_path_template} \
+  "mt" \
+  ${individuals_to_keep} \
+  ${output_path_template} \
+  ${output_type}
