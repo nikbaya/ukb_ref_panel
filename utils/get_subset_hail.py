@@ -2,13 +2,21 @@
 """
 Export subset of individuals from a dataset.
 
-This script should be run first for a single chromosome with the flags --choose_samples, --num_samples <number of samples in subset>, and --output_type "tsv". 
+This script should be run first for a single chromosome with the flags --choose_samples, 
+--num_samples <number of samples in subset>, and --output_type "tsv". 
 Optional flags include --ancestry <ancestry> and --keep_related.
 That will return a tab-separated file with the randomly chosen list of samples.
 
-Then run this script once for each chromosome (or each dataset), with each subsetting job using the same sample list output by the previous step with the flag --individuals_to_keep <filename>
+Then run this script once for each chromosome (or each dataset), with each subsetting 
+job using the same sample list output by the previous step with the flag --individuals_to_keep <filename>
 
-Alternatively, if you only need to subset a single dataset, just use the flags --choose_samples and --num_samples <num_samples>, writing the subset directly to whatever file format you choose, presumably 
+Alternatively, if you only need to subset a single dataset, just use the flags 
+--choose_samples and --num_samples <num_samples>, writing the subset directly to 
+whatever file format you choose. 
+
+If you need to convert an entire dataset from one file format to another, use
+--unfiltered to allow the full dataset to be written without any sample 
+filtering.
 
 @author: Nikolas Baya (2021/08/10)
 """
@@ -127,7 +135,12 @@ def main(args):
         bgen_samples=args.bgen_samples
     )
 
-    assert args.choose_samples + (args.individuals_to_keep is not None) == 1, "Either '--choose_samples' must be used or individuals_to_keep is not None, but not both"
+    assert args.choose_samples + \
+        (args.individuals_to_keep is not None) + \
+        args.unfiltered == 1, "Only one of the following can be true:\n\t\
+	>> The flag '--choose_samples' is used\n\t\
+	>> The argument for '--individuals_to_keep' is not None\n\t\
+	>> The flag '--unfiltered' is used"
     if args.choose_samples:
         mt = filter_to_ancestry(
             mt=mt,
@@ -143,13 +156,19 @@ def main(args):
         )
     elif args.individuals_to_keep:
         if args.num_samples or args.ancestry or args.keep_relateds:
-            print("Warning: Using the --individuals_to_keep flag will cause --num_samples, --ancestry and --keep_relateds flags to be ignored")
+            print("Warning: Using the --individuals_to_keep flag will cause\
+			    --num_samples, --ancestry and --keep_relateds flags to be ignored")
         # assume that this table contains the sample ID field "s"
         keep = hl.import_table(args.individuals_to_keep, key="s")
         num_missing = keep.filter(~hl.is_defined(mt.cols()[keep.s])).count()
         # check that `keep` is a subset of the samples in `mt`
-        assert num_missing == 0, f"{num_missing} individuals in the sample list to use as the subset are missing from the dataset to filter\n\tsample list: {args.individuals_to_keep}\n\tdataset to filter: {args.input_path}"
+        assert num_missing == 0, f"{num_missing} individuals in the sample list\
+			to use as the subset are missing from the dataset to \
+			filter\n\tsample list: {args.individuals_to_keep}\n\t\
+			dataset to filter: {args.input_path}"
         mt = mt.filter_cols(hl.is_defined(keep[mt.s]))
+    elif arg.unfiltered:
+        print("Warning: File will be written without any filtering, due to use of --unfiltered flag")
 
     write_output(
         mt=mt,
@@ -176,6 +195,8 @@ if __name__ == '__main__':
                         help="If flag is included, samples will be chosen")
     parser.add_argument("--individuals_to_keep", default=None,
                         help="Path to sample list file to subset to. This flag cannot be used with --return_sample_list")
+    parser.add_argument("--unfiltered", default=False, action="store_true",
+                        help="If flag is included, file will be written with no filter applied")
     parser.add_argument("--output_path", help="Path to output file")
     parser.add_argument("--output_type",
                         help="Type of output dataset (options: 'vcf', 'mt', 'plink', 'samples')")
